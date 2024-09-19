@@ -1,0 +1,10 @@
+mple
+$ ./6-firstdirectory
+$ file /tmp/my_first_directory/
+/tmp/my_first_directory/: directory
+$
+Repo:
+
+GitHub repository: alu-shell
+Directory: basics
+File: 6-firstdirectory
