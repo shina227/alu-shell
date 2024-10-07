@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 # This script lists the contents of the current directory, displaying only the part of the name after the first dash.
 
+# Loop through each item in the current directory
 for item in *; do
-    # Check if the item contains a dash
-    if [[ $item == *-* ]]; then
+    # Check if the item is a regular file or directory and not a hidden file
+    if [[ -e "$item" && $item == *-* ]]; then
         # Extract and print the part after the first dash
         echo "${item#*-}"
     fi
