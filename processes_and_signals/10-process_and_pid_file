@@ -15,6 +15,9 @@ trap 'echo "I hate the kill command";' SIGTERM
 trap 'echo "Y U no love me?!";' SIGINT
 trap cleanup SIGQUIT SIGTERM
 
+# Print "OK" before starting the main loop
+echo "OK"
+
 # Main loop to display the message indefinitely
 while true; do
     echo "To infinity and beyond"
