@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-# Displaying
+# This script displays "To infinity and beyond" indefinitely, with a 2-second pause between each message.
 
-while [[ 1 -eq 1]]; do
-       echo "To infinity and beyond"
-       sleep 2
+while true
+do 
+  echo "To infinity and beyond"
+  sleep 2
 done
