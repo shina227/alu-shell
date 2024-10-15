@@ -1,26 +1,22 @@
 #!/usr/bin/env bash
-# This script creates a PID file, displays messages indefinitely, and handles signals.
+# This script creates a PID file, prints a message indefinitely, and handles signals.
 
 # Create a PID file
 echo $$ > /var/run/myscript.pid
 
-# Define a cleanup function to delete the PID file and exit
+# Function to handle cleanup
 cleanup() {
     rm -f /var/run/myscript.pid
     exit
 }
 
-# Trap signals and define actions
-trap 'echo "I hate the kill command";' SIGTERM
+# Trap signals
+trap 'echo "I hate the kill command"; cleanup' SIGTERM
 trap 'echo "Y U no love me?!";' SIGINT
-trap cleanup SIGQUIT SIGTERM
+trap 'cleanup' SIGQUIT
 
-# Print "OK" before starting the main loop
-echo "OK"
-
-# Main loop to display the message indefinitely
+# Infinite loop
 while true; do
     echo "To infinity and beyond"
-    sleep 2
+    sleep 1
 done
-
