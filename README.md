@@ -1,1 +1,1 @@
-Shell projects (Linux)
+Shell (Linux) projects
